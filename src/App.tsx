@@ -4,10 +4,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Editor from "./pages/Editor";
-import Auth from "./pages/Auth";
-import MyThumbnails from "./pages/MyThumbnails";
-import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -17,12 +13,8 @@ const App = () => (
       <Toaster />
       <Sonner />
       <Routes>
+        {/* ONLY HOME PAGE EXISTS */}
         <Route path="/" element={<Index />} />
-        <Route path="/editor" element={<Editor />} />
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/my-thumbnails" element={<MyThumbnails />} />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </TooltipProvider>
   </QueryClientProvider>
